@@ -14,7 +14,6 @@ app.use(express.static('public'));
 app.use('/', express.static(__dirname + '/public')); //https://expressjs.com/en/starter/static-files.html
 
 
-
 const multer = require('multer');//https://github.com/expressjs/multer
 const upload = multer({test:'upload/'});
 
