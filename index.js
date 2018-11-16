@@ -45,7 +45,7 @@ app.post('/profile', (req, res)=>{
 });
 
 
-app.post('/profile', upload.single('avatar'), function (req, res, next) {
+app.post('/profile', upload.single('avatar'), function (req, res) {
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
   res.send("uploadding file");
