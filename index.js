@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 
 app.use(express.urlencoded()); //https://expressjs.com/en/api.html#express.urlencoded
 
-app.use('/', express.static(__dirname + '/public')); //https://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
+app.use('/', express.static(__dirname + '/public')); //https://expressjs.com/en/starter/static-files.html
 
 
 
@@ -39,10 +39,6 @@ app.post('/', (req, res)=>{
 });
 
 
-app.post('/profile', (req, res)=>{
-  res.send('file was uploaded successfully!');
-  console.log(' server upload code');
-});
 
 
 app.post('/profile', upload.single('avatar'), function (req, res) {
@@ -52,6 +48,10 @@ app.post('/profile', upload.single('avatar'), function (req, res) {
 
 });
 
+app.post('/profile', (req, res)=>{
+  res.send('file was uploaded successfully!');
+  console.log(' server upload code');
+});
 
 
 
